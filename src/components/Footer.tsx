@@ -35,7 +35,7 @@ export function Footer() {
   return (
     <div className={classes.footer}>
       <Container className={classes.inner}>
-        <Image alt='logo' src= 'logo.png' width={200} height={100} />
+        <Image alt='logo' src= 'Logo.png' width={200} height={100} />
         <Group spacing={0} className={classes.links} position="right" noWrap>
           <ActionIcon size="lg">
             <IconBrandTwitter size="1.05rem" stroke={1.5} />
