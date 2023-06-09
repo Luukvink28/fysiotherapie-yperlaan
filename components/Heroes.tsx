@@ -1,4 +1,5 @@
 "use client";
+import React from 'react';
 import { createStyles, Container, Title, Text, Button, rem } from '@mantine/core';
 
 const useStyles = createStyles((theme) => ({
@@ -67,6 +68,11 @@ const useStyles = createStyles((theme) => ({
     paddingRight: rem(50),
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontSize: rem(22),
+    color: theme.white,
+    backgroundColor: '#9e2a67',
+    ':hover': {
+      backgroundColor: '#8e1a57',
+    },
 
     [theme.fn.smallerThan('md')]: {
       width: '100%',
@@ -74,7 +80,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function Hero() {
+export function Heroes() {
   const { classes } = useStyles();
   return (
     <div className={classes.root}>
@@ -99,10 +105,8 @@ export function Hero() {
               size="xl"
               radius="md"
               className={classes.control}
-              color='pink.7'
               mt={40}
-
-            >
+              >
               Maak een afspraak
             </Button>
           </div>

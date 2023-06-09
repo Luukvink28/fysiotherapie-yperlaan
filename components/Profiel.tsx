@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React from 'react'
 import { Container, Grid, SimpleGrid, useMantineTheme, Title, Text, Box, Center, Image, createStyles } from '@mantine/core';
 
 export function Profiel() {

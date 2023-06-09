@@ -10,20 +10,16 @@ import {
     Group,
     ActionIcon,
     rem,
-      
   } from '@mantine/core';
   import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
-
   
   const useStyles = createStyles((theme) => ({
     wrapper: {
       minHeight: 400,
       boxSizing: 'border-box',
-      backgroundImage: `linear-gradient(-90deg, ${theme.colors['blue'][9]} 0%, ${
-        theme.colors['blue'][9]
-      } 100%)`,
+        backgroundColor: '#104b84',
       borderRadius: theme.radius.md,
-      padding: `calc(${theme.spacing.xl} * 1.5)`,
+      padding: `calc(${theme.spacing.xl} * 2.5)`,
   
       [theme.fn.smallerThan('sm')]: {
         padding: `calc(${theme.spacing.xl} * 1.5)`,
@@ -38,7 +34,7 @@ import {
   
     description: {
       color: theme.colors[theme.primaryColor][0],
-      maxWidth: rem(500),
+      maxWidth: rem(300),
   
       [theme.fn.smallerThan('sm')]: {
         maxWidth: '100%',
@@ -56,7 +52,7 @@ import {
       color: theme.white,
   
       '&:hover': {
-        color: theme.colors['pink'][7],
+        color: '#8e1a57',
       },
     },
   
@@ -75,21 +71,22 @@ import {
     },
   
     control: {
-      backgroundColor: theme.colors['pink'][7],
-      '&:hover': {
-        backgroundColor: theme.colors['pink'][9],
-      },
-    },
+        backgroundColor: '#9e2a67',
+        ':hover': {
+          backgroundColor: '#8e1a57',
+        },
+    }
+    ,
   }));
   
   const social = [IconBrandTwitter, IconBrandYoutube, IconBrandInstagram];
   
-  export function Contact() {
+  export function Afpraak() {
     const { classes } = useStyles();
   
     const icons = social.map((Icon, index) => (
-      <ActionIcon key={index} size={28} className={classes.social} variant="transparent">
-        <Icon size="1.4rem" stroke={1.5} />
+      <ActionIcon key={index} size={28} className={classes.social} variant="transparent" >
+        <Icon size="1.4rem" stroke={1.5}  />
       </ActionIcon>
     ));
   
@@ -97,47 +94,38 @@ import {
       <div className={classes.wrapper}>
         <SimpleGrid cols={2} spacing={50} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
           <div>
-            <Title className={classes.title}>Contact us</Title>
+            <Title className={classes.title}>Maak een afspraak</Title>
             <Text className={classes.description} mt="sm" mb={30}>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam at tempora libero! Dignissimos, itaque. Esse reprehenderit eum repellendus, natus dicta, tenetur reiciendis facilis inventore repudiandae cum quia, cupiditate similique assumenda.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere earum quibusdam nobis adipisci molestias ipsam id natus iusto modi, commodi expedita sit nesciunt porro placeat a, amet ipsum? Quia, minus?
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam expedita quis quibusdam vero. Consequatur quisquam perferendis eveniet! Reiciendis, porro amet. Facere, voluptatum? Voluptatem perferendis veritatis quaerat! Atque quam ad eligendi.
             </Text>
   
-
   
             <Group mt="xl">{icons}</Group>
           </div>
           <div className={classes.form}>
             <TextInput
               label="Email"
-              placeholder="Jouw@email.com"
-              required
-              classNames={{ input: classes.input, label: classes.inputLabel }}
-            />
-            <TextInput
-              label="Telefoonnummer"
-              placeholder="0612345678"
-              mt="md"
+              placeholder="jouw@email.com"
               required
               classNames={{ input: classes.input, label: classes.inputLabel }}
             />
             <TextInput
               label="Naam"
-              placeholder="Uw naam"
+              placeholder="John Doe"
               mt="md"
               classNames={{ input: classes.input, label: classes.inputLabel }}
             />
             <Textarea
               required
-              label="Jouw bericht"
-              placeholder="Uw klachten, vragen of opmerkingen"
+              label="Uw klachten"
+              placeholder="Beschrijf uw klachten"
               minRows={4}
               mt="md"
               classNames={{ input: classes.input, label: classes.inputLabel }}
             />
   
             <Group position="right" mt="md">
-              <Button className={classes.control}>Verstuur bericht</Button>
+              <Button className={classes.control}>Send message</Button>
             </Group>
           </div>
         </SimpleGrid>
