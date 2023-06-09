@@ -12,6 +12,7 @@ import {
     rem,
   } from '@mantine/core';
   import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
+  import Link from 'next/link';
   
   const useStyles = createStyles((theme) => ({
     wrapper: {
@@ -77,18 +78,24 @@ import {
         },
     }
     ,
-  }));
+    link: {
+      color: 'white',
+      textDecoration: 'none',
+      transition: 'all 0.2s ease',
+      ':hover': {
+        backgroundColor: 'transparent',
+        color: '#8e1a57',
+      },
+    },
+  })
+  );
   
   const social = [IconBrandTwitter, IconBrandYoutube, IconBrandInstagram];
   
   export function Afpraak() {
     const { classes } = useStyles();
   
-    const icons = social.map((Icon, index) => (
-      <ActionIcon key={index} size={28} className={classes.social} variant="transparent" >
-        <Icon size="1.4rem" stroke={1.5}  />
-      </ActionIcon>
-    ));
+    
   
     return (
       <div className={classes.wrapper}>
@@ -100,7 +107,13 @@ import {
             </Text>
   
   
-            <Group mt="xl">{icons}</Group>
+            <Group mt="xl">
+            <Link href="https://www.instagram.com/yperlaanfysiotherapie/">
+              <ActionIcon className={classes.link} size="lg">
+                <IconBrandInstagram size="1.85rem" />
+              </ActionIcon>
+            </Link>
+        </Group>
           </div>
           <div className={classes.form}>
             <TextInput

@@ -1,6 +1,7 @@
 "use client";
 import { createStyles, Container, Group, ActionIcon, rem, Image } from '@mantine/core';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
+import Link from 'next/link';
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -36,16 +37,26 @@ export function Footer() {
     <div className={classes.footer}>
       <Container className={classes.inner}>
         <Image alt='logo' src= 'logo.png' width={200} height={100} />
-        <Group spacing={0} className={classes.links} position="right" noWrap>
+            <Group spacing={0} className={classes.links} position="right" noWrap>
+      <Link href="https://twitter.com">
+
           <ActionIcon size="lg">
             <IconBrandTwitter size="1.05rem" stroke={1.5} />
           </ActionIcon>
+
+      </Link>
+      <Link href="https://youtube.com">
+
           <ActionIcon size="lg">
             <IconBrandYoutube size="1.05rem" stroke={1.5} />
           </ActionIcon>
+
+      </Link>
+      <Link href="https://www.instagram.com/yperlaanfysiotherapie/">
           <ActionIcon size="lg">
             <IconBrandInstagram size="1.05rem" stroke={1.5} />
           </ActionIcon>
+          </Link>
         </Group>
       </Container>
     </div>

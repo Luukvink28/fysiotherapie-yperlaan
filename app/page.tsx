@@ -1,7 +1,7 @@
 "use client";
-import { Navbar } from '@/components/Navbar'
-import { Cards } from '@/components/Cards'
-import { Footer } from '@/components/Footer';
+import { Navbar } from '../components/Navbar'
+import { Cards } from '../components/Cards'
+import { Footer } from '../components/Footer';
 import { Flex } from '@mantine/core';
 import { Profiel } from '../components/Profiel';
 import { Heroes } from '../components/Heroes';
