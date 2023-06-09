@@ -1,11 +1,11 @@
 "use client";
-import { Navbar } from '@/components/Navbar'
-import { Cards } from '@/components/Cards'
-import { Footer } from '@/components/Footer';
+import { Navbar } from '../components/Navbar'
+import { Cards } from '../components/Cards'
+import { Footer } from '../components/Footer';
 import { Flex } from '@mantine/core';
 import { Profiel } from '../components/Profiel';
 import { Heroes } from '../components/Heroes';
-import { Afpraak } from '../components/Afspraak';
+import { Afspraak } from '../components/Afspraak';
 
 
 
@@ -19,7 +19,7 @@ export default function Home() {
           "label": "Afpraak maken"
         },
         {
-          "link": "..//app/specialisaties/page.tsx",
+          "link": "/specialisaties",
           "label": "Specialisaties"
         }
       ]}
@@ -27,7 +27,7 @@ export default function Home() {
       <Heroes/>
      <Profiel/>
 
-      <Afpraak/>
+      <Afspraak/>
      <Flex
       mih={50}
       gap="md"
