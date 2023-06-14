@@ -1,14 +1,16 @@
 "use client";
+import React from 'react';
 import { Container, Grid, SimpleGrid, useMantineTheme, Title, Text, Box, Center, Image, createStyles } from '@mantine/core';
 
-export function Profile() {
+export function Profiel() {
   const theme = useMantineTheme();
   const useStyles = createStyles((theme) => ({
     title: {
-      color: theme.colors.pink[7],
+      color: "#9e2a67",
       fontFamily: `Greycliff CF, ${theme.fontFamily}`,
       fontWeight: 900,
       lineHeight: 1.05,
+
     },
     description: {
       color: theme.black,
