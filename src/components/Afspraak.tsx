@@ -1,22 +1,25 @@
 "use client";
 import {
-    Text,
-    Title,
-    SimpleGrid,
-    TextInput,
-    Textarea,
-    Button,
-      boxSizing: 'border-box',
-        backgroundColor: '#104b84',
-      borderRadius: theme.radius.md,
-      padding: `calc(${theme.spacing.xl} * 2.5)`,
-        padding: `calc(${theme.spacing.xl} * 1.5)`,
   createStyles,
   Text,
   Title,
   SimpleGrid,
   TextInput,
   Textarea,
+  Button,
+  Group,
+  ActionIcon,
+  rem,
+} from '@mantine/core';
+import {IconBrandInstagram } from '@tabler/icons-react';
+
+const useStyles = createStyles((theme) => ({
+  wrapper: {
+    minHeight: 400,
+    boxSizing: 'border-box',
+    backgroundColor: '#104b84',
+    borderRadius: theme.radius.md,
+    padding: `calc(${theme.spacing.xl} * 2.5)`,
 
     [theme.fn.smallerThan('sm')]: {
       padding: `calc(${theme.spacing.xl} * 1.5)`,
