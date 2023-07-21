@@ -70,8 +70,10 @@ const useStyles = createStyles((theme) => ({
     fontSize: rem(22),
     color: theme.white,
     backgroundColor: '#9e2a67',
-    ':hover': {
-      backgroundColor: '#8e1a57',
+    transition: 'all 0.2s ease-in-out',
+    '&:hover': {
+      transition: 'all 0.2s ease-in-out',
+      backgroundColor: '#5d5d5d',
     },
 
     [theme.fn.smallerThan('md')]: {

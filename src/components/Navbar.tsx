@@ -1,136 +1,76 @@
-"use client";
-import { useState } from 'react';
-import {
-  createStyles,
-  Header,
-  Container,
-  Group,
-  Burger,
-  Paper,
-  Transition,
-  rem,
-  Image,
-  
-
-} from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
+import React from 'react';
+import { createStyles, Header, Container, Group, Button, Image } from '@mantine/core';
 import Link from 'next/link';
 
-const HEADER_HEIGHT = rem(60);
+const HEADER_HEIGHT = 80;
 
 const useStyles = createStyles((theme) => ({
   root: {
-    position: 'relative',
-    zIndex: 1,
+    position: 'sticky',
+    zIndex: 99,
   },
-
-  dropdown: {
-    position: 'absolute',
-    top: HEADER_HEIGHT,
-    left: 0,
-    right: 0,
-    zIndex: 0,
-    borderTopRightRadius: 0,
-    borderTopLeftRadius: 0,
-    borderTopWidth: 0,
-    overflow: 'hidden',
-
-    [theme.fn.largerThan('sm')]: {
-      display: 'none',
-    },
+  container: {
+    paddingLeft: theme.spacing.md,
+    paddingRight: theme.spacing.md,
   },
-
-  header: {
+  logo: {
     display: 'flex',
-    justifyContent: 'space-between',
     alignItems: 'center',
-    height: '100%',
-  },
-
-  links: {
-    [theme.fn.smallerThan('sm')]: {
-      display: 'none',
-    },
-  },
-
-  burger: {
-    [theme.fn.largerThan('sm')]: {
-      display: 'none',
-    },
-  },
-
-  link: {
-    display: 'block',
-    lineHeight: 1,
-    padding: `${rem(8)} ${rem(12)}`,
-    borderRadius: theme.radius.sm,
     textDecoration: 'none',
     color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
-    fontSize: theme.fontSizes.sm,
+    fontSize: theme.fontSizes.lg,
     fontWeight: 500,
-
-    '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-    },
-
-    [theme.fn.smallerThan('sm')]: {
-      borderRadius: 0,
-      padding: theme.spacing.md,
+    cursor: 'pointer',
+  },
+  buttons: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: theme.spacing.sm,
+  },
+  button: {
+    color: 'white',
+    backgroundColor: '#104b84',
+    transition: 'all 0.2s ease-in-out',
+    ':hover': {
+      transition: 'all 0.2s ease-in-out',
+      backgroundColor: '#5d5d5d',
     },
   },
 
-  linkActive: {
-    '&, &:hover': {
-      backgroundColor: theme.fn.variant({ variant: 'light', color: 'indigo.9' }).background,
-      color: theme.fn.variant({ variant: 'light', color: 'blue.9' }).color,
-    },
-  },
 }));
 
-interface HeaderResponsiveProps {
-  links: { link: string; label: string }[];
+interface ButtonItem {
+  label: string;
+  onClick: () => void;
+  path: string;
 }
 
-export function Navbar({ links }: HeaderResponsiveProps) {
-  const [opened, { toggle, close }] = useDisclosure(false);
-  const [active, setActive] = useState(links[0].link);
-  const { classes, cx } = useStyles();
-  
+interface MantineNavbarProps {
+  logoSrc: string;
+  buttons: ButtonItem[];
+}
 
-  const items = links.map((link) => (
-    <Link
-      key={link.label}
-      href={link.link}
-      className={cx(classes.link, { [classes.linkActive]: active === link.link })}
-      onClick={(event) => {
-        event.preventDefault();
-        setActive(link.link);
-        close();
-      }}
-      scroll={false}
-    >
-      {link.label}
+export function Navbar({ logoSrc, buttons }: MantineNavbarProps) {
+  const { classes } = useStyles();
+
+  const navButtons = buttons.map((button) => (
+    <Link key={button.label} href={button.path}>
+      <Button className={classes.button} onClick={button.onClick}>{button.label}</Button>
     </Link>
   ));
-  
 
   return (
     <Header height={HEADER_HEIGHT} className={classes.root}>
-      <Container className={classes.header}>
-        <Image maw={150} alt='Logo' src='Logo.png'></Image>
-        <Group spacing={5} className={classes.links}>
-          {items}
-        </Group>
-
-        <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
-
-        <Transition transition="pop-top-right" duration={200} mounted={opened}>
-          {(styles) => (
-            <Paper className={classes.dropdown} withBorder style={styles}>
-              {items}
-            </Paper>
-          )}
-        </Transition>
+      <Container
+        style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+        className={classes.container}
+      >
+        <Link href="/" passHref>
+          <div className={classes.logo}>
+            <Image maw={150} alt='Logo' src={logoSrc} />
+          </div>
+        </Link>
+        <Group className={classes.buttons}>{navButtons}</Group>
       </Container>
     </Header>
   );

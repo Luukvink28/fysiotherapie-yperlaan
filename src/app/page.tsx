@@ -5,29 +5,30 @@ import { Footer } from '../components/Footer';
 import { Flex } from '@mantine/core';
 import { Profiel } from '../components/Profiel';
 import { Heroes } from '../components/Heroes';
-import { Afpraak } from '../components/Afspraak';
+import { Afspraak } from '../components/Afspraak';
 
 
 
 export default function Home() {
+  const handleButtonClick = (label: string) => {
+    console.log(`Button "${label}" clicked`);
+  };
+
   return (
     <>
-    <Navbar 
-      links = {[
-        {
-          "link": "/afspraak",
-          "label": "Afpraak maken"
-        },
-        {
-          "link": "..//app/specialisaties/page.tsx",
-          "label": "Specialisaties"
-        }
-      ]}
-     />
+      <Navbar
+        logoSrc="Logo.png" 
+        buttons={[
+          { label: 'Home', onClick: () => handleButtonClick('Home'), path: '/' },
+          { label: 'About', onClick: () => handleButtonClick('About'), path: '/about' },
+          { label: 'Specialiteiten', onClick: () => handleButtonClick('specialiteiten'), path: '/specialiteiten' },
+        ]}
+      />
+
       <Heroes/>
      <Profiel/>
 
-      <Afpraak/>
+      <Afspraak/>
      <Flex
       mih={50}
       gap="md"
