@@ -8,10 +8,8 @@ import {
   Textarea,
   Button,
   Group,
-  ActionIcon,
   rem,
 } from '@mantine/core';
-import {IconBrandInstagram } from '@tabler/icons-react';
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -84,17 +82,10 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const social = [IconBrandInstagram];
+
 
 export function Afspraak() {
   const { classes } = useStyles();
-
-  const icons = social.map((Icon, index) => (
-    <ActionIcon key={index} size={28} className={classes.social} variant="transparent">
-      <Icon size="1.4rem" stroke={1.5} />
-    </ActionIcon>
-  ));
-
   return (
     <div className={classes.wrapper}>
       <SimpleGrid cols={2} spacing={50} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
@@ -103,9 +94,6 @@ export function Afspraak() {
           <Text className={classes.description} mt="sm" mb={30}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam expedita quis quibusdam vero. Consequatur quisquam perferendis eveniet! Reiciendis, porro amet. Facere, voluptatum? Voluptatem perferendis veritatis quaerat! Atque quam ad eligendi.
           </Text>
-
-
-          <Group mt="xl">{icons}</Group>
         </div>
         <div className={classes.form}>
           <form target="_blank" action="https://formsubmit.co/Luukvink@icloud.com" method="POST">
