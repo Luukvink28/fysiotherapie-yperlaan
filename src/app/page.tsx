@@ -6,6 +6,7 @@ import { Flex } from '@mantine/core';
 import { Profiel } from '../components/Profiel';
 import { Heroes } from '../components/Heroes';
 import { Afspraak } from '../components/Afspraak';
+import specialiteiten from './specialiteiten/specialiteiten';
 
 
 
@@ -21,7 +22,7 @@ export default function Home() {
         buttons={[
           { label: 'Home', onClick: () => handleButtonClick('Home'), path: '/' },
           { label: 'About', onClick: () => handleButtonClick('About'), path: '/about' },
-          { label: 'Specialiteiten', onClick: () => handleButtonClick('specialiteiten'), path: '/specialiteiten' },
+          { label: 'Specialiteiten', onClick: () => handleButtonClick('specialiteiten'), path: 'specialiteiten' },
         ]}
       />
 
