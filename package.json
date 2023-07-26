@@ -12,6 +12,8 @@
     "@emotion/react": "^11.11.0",
     "@mantine/core": "^6.0.13",
     "@mantine/hooks": "^6.0.13",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.14.4",
     "@tabler/icons-react": "^2.20.0",
     "@types/node": "20.2.5",
     "@types/react": "18.2.7",
@@ -19,8 +21,11 @@
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
     "next": "13.4.4",
+    "next-sanity": "^5.1.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sanity": "^3.14.4",
+    "styled-components": "5.2",
     "typescript": "5.0.4"
   }
 }
