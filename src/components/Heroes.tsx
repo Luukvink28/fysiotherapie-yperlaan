@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { createStyles, Container, Title, Text, Button, rem } from '@mantine/core';
+import Link from 'next/link';
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -102,7 +103,7 @@ export function Heroes() {
             <Text className={classes.description} mt={30}>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa adipisci ratione vel inventore nisi nostrum optio, id cum quia totam ad atque! Ipsa officiis rem necessitatibus illo provident tempora omnis.
             </Text>
-
+            <Link href="/contact">
             <Button
               size="xl"
               radius="md"
@@ -111,6 +112,7 @@ export function Heroes() {
               >
               Maak een afspraak
             </Button>
+            </Link>
           </div>
         </div>
       </Container>

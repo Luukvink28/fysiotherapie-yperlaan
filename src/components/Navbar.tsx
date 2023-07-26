@@ -25,7 +25,7 @@ const useStyles = createStyles((theme) => ({
   buttons: {
     display: 'flex',
     alignItems: 'center',
-    gap: theme.spacing.sm,
+    gap: '6px',
   },
   button: {
     color: 'white',

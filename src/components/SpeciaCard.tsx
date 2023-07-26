@@ -12,7 +12,7 @@ const useStyles = createStyles((theme) => ({
     position: 'relative',
     backgroundColor: theme.colors.gray[1],
     width: '30.33%',
-    height: '330px',
+    height: '430px',
   },
 
   title: {
@@ -40,7 +40,7 @@ interface ArticleCardProps {
   };
 
 
-export function Cards({
+export function SpeciaCard({
   className,
   image,
   title,
@@ -62,7 +62,6 @@ export function Cards({
       <Text fz="sm" color="gray" lineClamp={4}>
         {description}
       </Text>
-      
 
 
     </Card>
