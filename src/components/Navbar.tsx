@@ -67,10 +67,10 @@ export function Navbar({ logoSrc, buttons }: MantineNavbarProps) {
       >
         <Link href="/" passHref>
           <div className={classes.logo}>
-            <Image maw={150} alt='Logo' src={logoSrc} />
+            <Image mt={-10} maw={200} alt='Logo' src={logoSrc} />
           </div>
         </Link>
-        <Group className={classes.buttons}>{navButtons}</Group>
+        <Group mt={-15} className={classes.buttons}>{navButtons}</Group>
       </Container>
     </Header>
   );
