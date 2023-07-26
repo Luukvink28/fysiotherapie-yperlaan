@@ -59,14 +59,12 @@ export function FormField() {
   const { classes } = useStyles();
   return (
     <div className={classes.wrapper}>
-      <div>
         <Text size={32} mt={-40} align="center" weight={700} color="white">
           Contact
         </Text>
         <Text size={18} align="center" color="white" mt={5} mb={30}>
-          Please fill out the form below to get in touch with us. We'll get back to you as soon as possible.
+          Please fill out the form below to get in touch with us. We will get back to you as soon as possible.
         </Text>
-      </div>
       <div className={classes.formContainer}>
         <form target="_blank" action="https://formsubmit.co/Luukvink@icloud.com" method="POST">
           <label className={classes.formLabel}></label>
