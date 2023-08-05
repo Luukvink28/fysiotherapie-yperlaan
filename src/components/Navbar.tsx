@@ -2,7 +2,7 @@ import React from 'react';
 import { createStyles, Header, Container, Group, Button, Image } from '@mantine/core';
 import Link from 'next/link';
 
-const HEADER_HEIGHT = 90;
+const HEADER_HEIGHT = 95;
 
 const useStyles = createStyles((theme) => ({
   root: {
