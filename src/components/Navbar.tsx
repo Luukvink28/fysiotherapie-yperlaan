@@ -2,7 +2,7 @@ import React from 'react';
 import { createStyles, Header, Container, Group, Button, Image } from '@mantine/core';
 import Link from 'next/link';
 
-const HEADER_HEIGHT = 80;
+const HEADER_HEIGHT = 90;
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -60,7 +60,7 @@ export function Navbar({ logoSrc, buttons }: MantineNavbarProps) {
   ));
 
   return (
-    <Header height={HEADER_HEIGHT} className={classes.root}>
+    <Header height={HEADER_HEIGHT} className={classes.root} pt={5}>
       <Container
         style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
         className={classes.container}
@@ -70,7 +70,7 @@ export function Navbar({ logoSrc, buttons }: MantineNavbarProps) {
             <Image mt={-10} maw={200} alt='Logo' src={logoSrc} />
           </div>
         </Link>
-        <Group mt={-15} className={classes.buttons}>{navButtons}</Group>
+        <Group  className={classes.buttons}>{navButtons}</Group>
       </Container>
     </Header>
   );

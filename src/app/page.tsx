@@ -17,11 +17,11 @@ export default function Home() {
   return (
     <>
       <Navbar
-        logoSrc="Logo.png" 
-        buttons={[
-          { label: 'Home', onClick: () => handleButtonClick('Home'), path: '/' },
-          { label: 'Contact', onClick: () => handleButtonClick('Contact'), path: '/contact' },
-          { label: 'Specialiteiten', onClick: () => handleButtonClick('specialiteiten'), path: '/specialiteiten' },
+          logoSrc="Logo.png" 
+          buttons={[
+            { label: 'Home', onClick: () => handleButtonClick('Home'), path: '/' },
+            { label: 'Contact', onClick: () => handleButtonClick('Contact'), path: '/contact' },
+            { label: 'Specialiteiten', onClick: () => handleButtonClick('specialiteiten'), path: '/specialiteiten' },
         ]}
       />
 
