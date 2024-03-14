@@ -66,7 +66,7 @@ export function FormField() {
           Please fill out the form below to get in touch with us. We will get back to you as soon as possible.
         </Text>
       <div className={classes.formContainer}>
-        <form target="_blank" action="https://formsubmit.co/Luukvink@icloud.com" method="POST">
+        <form target="_blank" action="https://formsubmit.co/9476a3a1a44a9cdb8d3b655b5db90300" method="POST">
           <label className={classes.formLabel}></label>
           <TextInput
             label="Uw naam"
